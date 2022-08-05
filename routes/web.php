@@ -25,6 +25,23 @@ Route::get('/sobre-nos', 'SobreNosController@sobreNos');
 Route::get('/contato', 'ContatoController@contato');
 // nome, categoria, assunto, mensagem
 
+Route::get('/login', function () {
+    return 'Login';
+});
+
+Route::get('/clientes', function () {
+    return 'Clientes';
+});
+
+Route::get('/fornecedores', function () {
+    return 'Fornecedores';
+});
+
+Route::get('/produtos', function () {
+    return 'Produtos';
+});
+
+
 
 // Route::get(
 //     '/contato/{nome}/{categoria_id}',
