@@ -27,8 +27,8 @@ Route::get('/contato', 'ContatoController@contato');
 
 
 Route::get(
-    '/contato/{nome?}/{categoria?}/{assunto?}/{mensagem?}',
-    function (string $nome = 'Desconhecido', string $categoria = 'Informação', string $assunto = 'Contato', string $mensagem = 'mensagem não informada') {
-        echo "Estamos aqui: $nome - $categoria - $assunto - $mensagem";
+    '/contato/{nome}/{categoria_id}',
+    function (string $nome = 'Desconhecido', int $categoria_id = 1) { // 1 - 'Informação'
+        echo "Estamos aqui: $nome - $categoria_id";
     }
-);
+)->where('categoria_id', '[0-9]+')->where('nome', '[A-Za-z]+');
