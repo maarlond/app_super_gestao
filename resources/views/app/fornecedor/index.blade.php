@@ -5,10 +5,15 @@
 {{ 'Texto de teste' }} <br>
 <?= 'Texto de teste' ?>
 @php
-// Para comentários de uma linha
-/*
-Para comentários de múltiplas linhas
-*/
 
-echo 'Texto de teste';
 @endphp
+
+{{-- @dd($fornecedores) Imprimir arrays utilizando blade --}}
+
+@if (count($fornecedores) > 0 && count($fornecedores) < 10)
+    <h3>Existem alguns fornecedores cadastrados </h3>
+@elseif(count($fornecedores) > 10)
+    <h3>Existem vários fornecedores cadastrados </h3>
+@else
+    <h3>Ainda não existem fornecedores cadastrados </h3>
+@endif
