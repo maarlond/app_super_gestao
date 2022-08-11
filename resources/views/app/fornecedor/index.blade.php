@@ -4,9 +4,7 @@
 
 {{-- {{ 'Texto de teste' }} <br> --}}
 {{-- <?= 'Texto de teste' ?> --}}
-@php
 
-@endphp
 
 {{-- @dd($fornecedores) Imprimir arrays utilizando blade --}}
 
@@ -33,6 +31,20 @@ Status: {{ $fornecedores[0]['status'] }}
     Fornecedor Inativo
 @endunless
 
+@php
+/*
+        if(empty($variavel)) {} // retornar true se a variável estiver vazia
+        - ''
+        - 0
+        - 0.0
+        - '0'
+        - null
+        - false
+        - array()
+        - $var
+*/
+@endphp
+
 @isset($fornecedores)
     Fornecedor: {{ $fornecedores[0]['nome'] }}
     <br>
@@ -40,5 +52,8 @@ Status: {{ $fornecedores[0]['status'] }}
     <br>
     @isset($fornecedores[0]['cnpj'])
         CNPJ: {{ $fornecedores[0]['cnpj'] }}
+        @empty($fornecedores[0]['cnpj'])
+            Cnpj vazio
+        @endempty
     @endisset
 @endisset
